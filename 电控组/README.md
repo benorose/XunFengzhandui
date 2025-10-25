@@ -44,19 +44,19 @@ PWM即Pulse Width Modulation 脉宽调制，通过调节方波中高电平在周
 
 - 脉宽时间：即高电平的时间，一般方波周期时间时固定的
 
-![image-20251024173304591](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251024173304591.png)
+![image-20251024173304591](README.assets/image-20251024173304591.png)
 
 - Prescaler（预分频器）：把APB1的时钟频率进行一个比例处理，当我们使用高级外部时钟时，将频率拉满达到72MHZ，这个频率过快，对于计数器很快就会填满，所以一般进行一个缩小，公式如下；
 
-![image-20251024173822488](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251024173822488.png)
+![image-20251024173822488](README.assets/image-20251024173822488.png)
 
 - Counter Period（⾃动重装值ARR），其中ARR是AutoReload Register，他的意思是计数器计到某个值就归零（Reload），这决定PWM的周 期，那他决定PWM周期的公式如下：
 
-![image-20251024173953885](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251024173953885.png)
+![image-20251024173953885](README.assets/image-20251024173953885.png)
 
 - Pulse（CCR寄存器值，占空⽐），它定义了⼀个⽐较值，决定PWM的占空⽐， 它的公式如下：
 
-  ![image-20251024174032011](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251024174032011.png)
+  ![image-20251024174032011](README.assets/image-20251024174032011.png)
 
   **一般来说预分频，自动重装载值一般在前期确定，在之后代码段不进行改变，所以我们一般通过控制CCR来进行信号控制**
 
@@ -108,7 +108,7 @@ PWM即Pulse Width Modulation 脉宽调制，通过调节方波中高电平在周
 
 L298N的接线如下：
 
-![image-20251025024410047](C:/Users/郭安艺/AppData/Roaming/Typora/typora-user-images/image-20251025024410047.png)
+![image-20251025024410047](README.assets/image-20251025024410047.png)
 
 > 对于l298n，如果不摘使能帽，则可以输出一个5V的电压，如果摘掉，则需要接一个5v的输入电压
 >
@@ -138,7 +138,7 @@ L298N的接线如下：
 
   其中pulse为不同时间时，舵机角度
 
-  ![image-20251025015529467](C:/Users/郭安艺/AppData/Roaming/Typora/typora-user-images/image-20251025015529467.png)
+  ![image-20251025015529467](README.assets/image-20251025015529467.png)
 
 **代码展示：**
 
@@ -255,7 +255,7 @@ SPI主机和从机都有一个串行移位寄存器，主机通过向它的SPI�
 3. 主机(Master)将要发送的数据写到发送数据缓存区(Menory)，缓存区经过移位寄存器(0~7)，串行移位寄存器通过MOSI信号线将字节一位一位的移出去传送给从机，，同时MISO接口接收到的数据经过移位寄存器一位一位的移到接收缓存区。
 4. 从机(Slave)也将自己的串行移位寄存器(0~7)中的内容通过MISO信号线返回给主机。同时通过MOSI信号线接收主机发送的数据，这样，两个移位寄存器中的内容就被交换。
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/120d59bba98628fa7bdfe66157a26e3b.png)
+![在这里插入图片描述](README.assets/120d59bba98628fa7bdfe66157a26e3b.png)
 
 SPI通信有4种不同的操作模式，不同的从设备可能在出厂是就是配置为某种模式，这是不能改变的；但我们的通信双方必须是工作在同一模式下，所以我们可以对我们的主设备的SPI模式进行配置，通过CPOL（时钟极性）和CPHA（时钟相位）来
 控制我们主设备的通信模式，具体如下：
@@ -269,7 +269,7 @@ SPI通信有4种不同的操作模式，不同的从设备可能在出厂是就�
 - CPHA=0，在时钟的第一个跳变沿（上升沿或下降沿）进行数据采样。，在第2个边沿发送数据
 - CPHA=1，在时钟的第二个跳变沿（上升沿或下降沿）进行数据采样。，在第1个边沿发送数据
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/536809aec3694839b01b560fc854a7d4.png)
+![在这里插入图片描述](README.assets/536809aec3694839b01b560fc854a7d4.png)
 
 ### 5.2 代码模拟SPI
 
@@ -764,27 +764,27 @@ void StopAllMotors(void)
 
 本次比赛我们队采取的是如下图所示的麦轮情况：
 
-![image-20251025235154136](C:/Users/郭安艺/AppData/Roaming/Typora/typora-user-images/image-20251025235154136.png)
+![image-20251025235154136](README.assets/image-20251025235154136.png)
 
 **麦轮特点：**
 
 由斜着的多个滚轮组成，因此通过力学分析，每个滚轮所受的摩擦力可以简化为作用于滚轮中点，**方向与滚轮运动方向相反（即垂直于滚轮朝向，正负由麦轮滚动方向决定）**，速度方向则和朝向相同
 
-![img](https://i-blog.csdnimg.cn/blog_migrate/39cf404b7aee5ced9c0c39dd34ce9d7c.png)
+![img](README.assets/39cf404b7aee5ced9c0c39dd34ce9d7c.png)
 
 #### 运动分析
 
 1.前进：（AB轮可以相互抵消轴向速度，正转：沿辊子轴向上；反转：沿辊子轴向下）
 
-![img](https://i-blog.csdnimg.cn/blog_migrate/79ea2951f326621d2774bcb9bcb0b77f.png)
+![img](README.assets/79ea2951f326621d2774bcb9bcb0b77f.png)
 
 2.倒退：（AB轮可以相互抵消轴向速度）
 
-![img](https://i-blog.csdnimg.cn/blog_migrate/3159c46c62d5585cd5bc19afe60b5c1a.png)
+![img](README.assets/3159c46c62d5585cd5bc19afe60b5c1a.png)
 
 3.左移：（A轮反转，B轮正转）
 
-![img](https://i-blog.csdnimg.cn/blog_migrate/17988d689bc24df2ca2ea6c0c5df4349.png)
+![img](README.assets/17988d689bc24df2ca2ea6c0c5df4349.png)
 
 4.原地左转掉头：（左前：反转；右前正转；左后：反转；右后：正转。即同侧左：反转；同侧右：正转）
 
@@ -792,11 +792,11 @@ void StopAllMotors(void)
 
 通过力学分析此时A轮产生了一对等大反向的力（力偶），B轮同理，因此合效果是一个总力矩
 
-![img](https://i-blog.csdnimg.cn/blog_migrate/6d3abf792cc907c0c424fe5b824b3cd4.png)
+![img](README.assets/6d3abf792cc907c0c424fe5b824b3cd4.png)
 
 5.原地右转掉头：（左前：正转；右前反转；左后：正转；右后：反转。即同侧左：正转；同侧右：反转）
 
-![img](https://i-blog.csdnimg.cn/blog_migrate/79e72df07405adac9129711a1fb73bf7.png)
+![img](README.assets/79e72df07405adac9129711a1fb73bf7.png)
 
 方向映射方程的代码如下
 

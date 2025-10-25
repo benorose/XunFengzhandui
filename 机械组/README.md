@@ -38,13 +38,13 @@
 
 - 2025年：无人机云台设计、英雄六摩擦云台设计、英雄中心供弹部分研发
 - 2026年：大臂工程模块研发（追赶项目）
-- ![image-20251026011003347](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251026011003347.png)
+- ![image-20251026011003347](README.assets/image-20251026011003347.png)
 
 ### （二）10月1日 - 10月8日：线上软件学习
 
 自主学习B站Fusion 360基础建模教程，掌握软件基本操作，为后续小车建模工作打下基础。
 
-![image-20251026011023373](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251026011023373.png)
+![image-20251026011023373](README.assets/image-20251026011023373.png)
 
 ### （三）10月12日：机械组第二次Fusion 360使用教学培训
 
@@ -64,7 +64,7 @@
 - 功能部件：滚轮（8个，分别为滚轮1 - 8）
 - 紧固件：长螺丝（8个，分别为长螺丝1 - 8）、防松螺母（5个，分别为防松螺母1 - 5）
 
-![image-20251026011112353](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251026011112353.png)
+![image-20251026011112353](README.assets/image-20251026011112353.png)
 
 ## 二、设计研发阶段
 
@@ -82,30 +82,30 @@
 #### 2. 滚筒拆分建模
 为简化建模流程、提高模型精度，将滚筒设计拆分为四个部分分别建模，各部分具体信息如下：
 - **连接杆**：滚筒的连接支撑部件，模型如图所示：
-  ![image-20251026011256394](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251026011256394.png)
+  ![image-20251026011256394](README.assets/image-20251026011256394.png)
 
 - **轴心杆**：滚筒的核心旋转部件，模型如图所示：
 
-- ![image-20251026011329607](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251026011329607.png)
+- ![image-20251026011329607](README.assets/image-20251026011329607.png)
 
 - **圆盘**：滚筒的辅助结构部件，模型如图所示：
 
-- ![image-20251026011349457](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251026011349457.png)
+- ![image-20251026011349457](README.assets/image-20251026011349457.png)
 
 - **固定盖**：用于固定滚筒各部件的零件，模型如图所示：
-  ![image-20251026011402899](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251026011402899.png)
+  ![image-20251026011402899](README.assets/image-20251026011402899.png)
 
 - **完整效果：**
 
-  ![image-20251026011540131](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251026011540131.png)
+  ![image-20251026011540131](README.assets/image-20251026011540131.png)
 
 #### 3. 围栏设计
 为实现小球的有效收集，设计围栏结构，用于引导和限制小球运动轨迹，确保小球能顺利进入滚筒收集范围，围栏模型如图所示：
-![image-20251026011450980](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251026011450980.png)
+![image-20251026011450980](README.assets/image-20251026011450980.png)
 
 #### 4. 整车装配建模
 完成各零件建模后，进行小车整体的连接装配建模，最终得到小车完整装配模型，模型包含金属底盘、黄马达、L298N电机驱动、麦克纳姆轮、舵机、舵机固定件、滚筒各部件、围栏等所有核心部件，具体如图所示：
-![image-20251026011506100](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251026011506100.png)
+![image-20251026011506100](README.assets/image-20251026011506100.png)
 
 通过联接检测验证，该装配模型能够实现各部件的正常转动，且满足刚性约束要求，符合设计预期。
 
@@ -113,7 +113,7 @@
 
 ### （一）10月24日：3D打印培训与零件打印
 参与线下3D打印培训，掌握3D打印的操作流程、参数设置等关键技能，随后对已完成建模的小车零件进行3D打印，为后续小车拼装做准备，3D打印相关场景如图所示：
-![image-20251026011422784](C:\Users\郭安艺\AppData\Roaming\Typora\typora-user-images\image-20251026011422784.png)
+![image-20251026011422784](README.assets/image-20251026011422784.png)
 
 ### （二）10月25日：小车拼装
 将3D打印完成的零件与采购的标准件（如螺丝、螺母等）进行组装，完成小车的实物制作，标志着机械组从建模到装配的全流程任务初步完成。
