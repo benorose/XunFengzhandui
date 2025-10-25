@@ -1,0 +1,5 @@
+../Core/Src/motor_control.c:44:6:MotorControl_Init	8	static
+../Core/Src/motor_control.c:85:5:GetMoveDirection	16	static
+../Core/Src/motor_control.c:129:6:SetSingleMotor	32	static
+../Core/Src/motor_control.c:150:6:SetMotorSpeed	40	static
+../Core/Src/motor_control.c:182:6:StopAllMotors	4	static
